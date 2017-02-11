@@ -10,4 +10,68 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="pt.ipleiria.estg.dei.examerecurso.MainActivity">
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/spinner" />
+
+    <Button
+        android:text="@string/acaoBotaoComprimir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnComprimir"
+        android:layout_below="@+id/spinner"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnComprimir"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layouthor">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:ems="10"
+            android:id="@+id/editText1"
+            android:layout_weight="1" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:text="@string/btnSaoAnagramas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layouthor"
+        android:id="@+id/btnAnagramas"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewResultadoAnagrama"
+        android:layout_below="@+id/btnAnagramas"
+        android:text="resultado"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
+
+
 </RelativeLayout>
