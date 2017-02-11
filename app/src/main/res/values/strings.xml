@@ -2,4 +2,5 @@
     <string name="app_name">ExameRecurso</string>
     <string name="acaoBotaoComprimir">comprimir</string>
     <string name="btnSaoAnagramas">são anagramas?</string>
+    <string name="textoDefaultEdit">texto</string>
 </resources>

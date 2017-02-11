@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onAnagramasClick(View view){
-        String palavra1 = editText1.getText().toString();
-        String palavra2 = editText2.getText().toString();
+        String palavra1 = editText1.getText().toString().toLowerCase();
+        String palavra2 = editText2.getText().toString().toLowerCase();
 
         HashMap<Character, Integer> mapa1 = construirMapaCaracteres(palavra1);
         HashMap<Character, Integer> mapa2 = construirMapaCaracteres(palavra2);
@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             txtResAnagramas.setText("Não é Anagrama!");
         }
-
 
     }
 
