@@ -51,4 +51,10 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listaTestes));
     }
 
+    public void onComprimirClick(View view){
+        String descomprimido = (String)spinner.getSelectedItem();
+
+        System.out.println("String a comprimir: " + descomprimido);
+    }
+
 }

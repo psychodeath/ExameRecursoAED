@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnComprimir"
         android:layout_below="@+id/spinner"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="onComprimirClick"/>
 
     <LinearLayout
         android:orientation="horizontal"
