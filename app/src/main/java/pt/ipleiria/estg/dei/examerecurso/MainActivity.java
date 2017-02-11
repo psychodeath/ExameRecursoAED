@@ -57,12 +57,43 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listaTestes));
     }
 
+    public void onAnagramasClick(View view){
+        String palavra1 = editText1.getText().toString();
+        String palavra2 = editText2.getText().toString();
+
+        HashMap<Character, Integer> mapa1 = construirMapaCaracteres(palavra1);
+        HashMap<Character, Integer> mapa2 = construirMapaCaracteres(palavra2);
+
+        if(mapa1.equals(mapa2)){
+            txtResAnagramas.setText("É Anagrama!");
+        } else {
+            txtResAnagramas.setText("Não é Anagrama!");
+        }
+
+
+    }
+
+    private HashMap<Character, Integer> construirMapaCaracteres(String palavra){
+        HashMap<Character, Integer> mapaCaracteres = new HashMap<>();
+
+        int atual;
+        for (int i = 0; i < palavra.length(); i++){
+            if(mapaCaracteres.containsKey(palavra.charAt(i))){
+                atual = mapaCaracteres.get(palavra.charAt(i));
+                atual++;
+            } else {
+                atual = 1;
+            }
+            mapaCaracteres.put(palavra.charAt(i), atual);
+        }
+
+        return mapaCaracteres;
+    }
+
     public void onComprimirClick(View view){
         String descomprimido = (String)spinner.getSelectedItem();
-        System.out.println("Descomprimido: " + descomprimido);
         StringBuilder inversor = new StringBuilder(descomprimido);
         String invertido = inversor.reverse().toString();
-        System.out.println("Invertido: " + invertido);
 
         Fila<String> filaRes = new Fila<>();
 
