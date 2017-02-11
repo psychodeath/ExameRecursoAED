@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.Normalizer;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -58,8 +59,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onAnagramasClick(View view){
-        String palavra1 = editText1.getText().toString().toLowerCase();
-        String palavra2 = editText2.getText().toString().toLowerCase();
+        String palavra1 = limparAcentos(editText1.getText().toString().toLowerCase());
+        String palavra2 = limparAcentos(editText2.getText().toString().toLowerCase());
+
+
 
         HashMap<Character, Integer> mapa1 = construirMapaCaracteres(palavra1);
         HashMap<Character, Integer> mapa2 = construirMapaCaracteres(palavra2);
@@ -87,6 +90,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return mapaCaracteres;
+    }
+
+    private String limparAcentos(String string){
+        StringBuilder sb = new StringBuilder(string.length());
+        string = Normalizer.normalize(string, Normalizer.Form.NFD);
+        for (char c : string.toCharArray()) {
+            if (c <= '\u007F') sb.append(c);
+        }
+        return sb.toString();
+
     }
 
     public void onComprimirClick(View view){
